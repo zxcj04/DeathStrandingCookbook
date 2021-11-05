@@ -2,20 +2,30 @@
 //  ContentView.swift
 //  DeathStrandingCookbook
 //
-//  Created by FanRende on 2021/11/5.
+//  Created by FanRende on 2021/11/3.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            CharacterIntroduction()
+                .tabItem{
+                    Label("人物介紹", systemImage: "person.circle")
+                }
+
+            RewardIntroduction()
+                .tabItem{
+                    Label("獎勵整理", systemImage: "gift.circle.fill")
+                }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }
