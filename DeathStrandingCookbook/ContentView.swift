@@ -19,6 +19,11 @@ struct ContentView: View {
                 .tabItem{
                     Label("獎勵整理", systemImage: "gift.circle.fill")
                 }
+
+            IconSwitch()
+                .tabItem {
+                    Label("切換 Icon", systemImage: "pencil.circle.fill")
+                }
         }
     }
 }

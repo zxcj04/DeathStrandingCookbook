@@ -16,10 +16,17 @@
 		03698C4527346DC600249CBF /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03698C4427346DC600249CBF /* CharacterRow.swift */; };
 		03698C4727346DF800249CBF /* RewardIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03698C4627346DF800249CBF /* RewardIntroduction.swift */; };
 		03698C4927346E1D00249CBF /* RewardLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03698C4827346E1D00249CBF /* RewardLocation.swift */; };
+		03C322882734C13100A0BEBE /* icon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322822734C13000A0BEBE /* icon_2@2x.png */; };
+		03C322892734C13100A0BEBE /* icon_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322832734C13000A0BEBE /* icon_2@3x.png */; };
+		03C3228A2734C13100A0BEBE /* icon_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322842734C13000A0BEBE /* icon_4@3x.png */; };
+		03C3228B2734C13100A0BEBE /* icon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322852734C13100A0BEBE /* icon_3@2x.png */; };
+		03C3228C2734C13100A0BEBE /* icon_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322862734C13100A0BEBE /* icon_3@3x.png */; };
+		03C3228D2734C13100A0BEBE /* icon_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322872734C13100A0BEBE /* icon_4@2x.png */; };
+		03C322902734C46300A0BEBE /* IconSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C3228F2734C46200A0BEBE /* IconSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03698C1B27346ACE00249CBF /* DeathStrandingCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathStrandingCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03698C1B27346ACE00249CBF /* D.S. Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D.S. Cookbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03698C1E27346ACE00249CBF /* DeathStrandingCookbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathStrandingCookbookApp.swift; sourceTree = "<group>"; };
 		03698C2027346ACE00249CBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03698C2227346AD300249CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,6 +36,14 @@
 		03698C4427346DC600249CBF /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
 		03698C4627346DF800249CBF /* RewardIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardIntroduction.swift; sourceTree = "<group>"; };
 		03698C4827346E1D00249CBF /* RewardLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardLocation.swift; sourceTree = "<group>"; };
+		03C322822734C13000A0BEBE /* icon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_2@2x.png"; sourceTree = "<group>"; };
+		03C322832734C13000A0BEBE /* icon_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_2@3x.png"; sourceTree = "<group>"; };
+		03C322842734C13000A0BEBE /* icon_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_4@3x.png"; sourceTree = "<group>"; };
+		03C322852734C13100A0BEBE /* icon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_3@2x.png"; sourceTree = "<group>"; };
+		03C322862734C13100A0BEBE /* icon_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_3@3x.png"; sourceTree = "<group>"; };
+		03C322872734C13100A0BEBE /* icon_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_4@2x.png"; sourceTree = "<group>"; };
+		03C3228E2734C21100A0BEBE /* D-S--Cookbook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "D-S--Cookbook-Info.plist"; sourceTree = "<group>"; };
+		03C3228F2734C46200A0BEBE /* IconSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +60,7 @@
 		03698C1227346ACE00249CBF = {
 			isa = PBXGroup;
 			children = (
+				03C3228E2734C21100A0BEBE /* D-S--Cookbook-Info.plist */,
 				03698C1D27346ACE00249CBF /* DeathStrandingCookbook */,
 				03698C1C27346ACE00249CBF /* Products */,
 			);
@@ -53,7 +69,7 @@
 		03698C1C27346ACE00249CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03698C1B27346ACE00249CBF /* DeathStrandingCookbook.app */,
+				03698C1B27346ACE00249CBF /* D.S. Cookbook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,8 +77,10 @@
 		03698C1D27346ACE00249CBF /* DeathStrandingCookbook */ = {
 			isa = PBXGroup;
 			children = (
+				03C322812734C0B600A0BEBE /* icons */,
 				03698C1E27346ACE00249CBF /* DeathStrandingCookbookApp.swift */,
 				03698C2027346ACE00249CBF /* ContentView.swift */,
+				03C3228F2734C46200A0BEBE /* IconSwitch.swift */,
 				03698C4027346D8200249CBF /* CharacterDetail.swift */,
 				03698C4227346D9F00249CBF /* CharacterIntroduction.swift */,
 				03698C4427346DC600249CBF /* CharacterRow.swift */,
@@ -82,12 +100,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		03C322812734C0B600A0BEBE /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				03C322822734C13000A0BEBE /* icon_2@2x.png */,
+				03C322832734C13000A0BEBE /* icon_2@3x.png */,
+				03C322852734C13100A0BEBE /* icon_3@2x.png */,
+				03C322862734C13100A0BEBE /* icon_3@3x.png */,
+				03C322872734C13100A0BEBE /* icon_4@2x.png */,
+				03C322842734C13000A0BEBE /* icon_4@3x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03698C1A27346ACE00249CBF /* DeathStrandingCookbook */ = {
+		03698C1A27346ACE00249CBF /* D.S. Cookbook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03698C2927346AD300249CBF /* Build configuration list for PBXNativeTarget "DeathStrandingCookbook" */;
+			buildConfigurationList = 03698C2927346AD300249CBF /* Build configuration list for PBXNativeTarget "D.S. Cookbook" */;
 			buildPhases = (
 				03698C1727346ACE00249CBF /* Sources */,
 				03698C1827346ACE00249CBF /* Frameworks */,
@@ -97,9 +128,9 @@
 			);
 			dependencies = (
 			);
-			name = DeathStrandingCookbook;
+			name = "D.S. Cookbook";
 			productName = DeathStrandingCookbook;
-			productReference = 03698C1B27346ACE00249CBF /* DeathStrandingCookbook.app */;
+			productReference = 03698C1B27346ACE00249CBF /* D.S. Cookbook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03698C1A27346ACE00249CBF /* DeathStrandingCookbook */,
+				03698C1A27346ACE00249CBF /* D.S. Cookbook */,
 			);
 		};
 /* End PBXProject section */
@@ -140,7 +171,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C3228A2734C13100A0BEBE /* icon_4@3x.png in Resources */,
+				03C322882734C13100A0BEBE /* icon_2@2x.png in Resources */,
+				03C322892734C13100A0BEBE /* icon_2@3x.png in Resources */,
+				03C3228B2734C13100A0BEBE /* icon_3@2x.png in Resources */,
+				03C3228C2734C13100A0BEBE /* icon_3@3x.png in Resources */,
 				03698C2627346AD300249CBF /* Preview Assets.xcassets in Resources */,
+				03C3228D2734C13100A0BEBE /* icon_4@2x.png in Resources */,
 				03698C2327346AD300249CBF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +195,7 @@
 				03698C4727346DF800249CBF /* RewardIntroduction.swift in Sources */,
 				03698C4327346D9F00249CBF /* CharacterIntroduction.swift in Sources */,
 				03698C2127346ACE00249CBF /* ContentView.swift in Sources */,
+				03C322902734C46300A0BEBE /* IconSwitch.swift in Sources */,
 				03698C1F27346ACE00249CBF /* DeathStrandingCookbookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +330,7 @@
 				DEVELOPMENT_TEAM = 4QSYFFJ3YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-S--Cookbook-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,6 +361,7 @@
 				DEVELOPMENT_TEAM = 4QSYFFJ3YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-S--Cookbook-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -353,7 +393,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03698C2927346AD300249CBF /* Build configuration list for PBXNativeTarget "DeathStrandingCookbook" */ = {
+		03698C2927346AD300249CBF /* Build configuration list for PBXNativeTarget "D.S. Cookbook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03698C2A27346AD300249CBF /* Debug */,

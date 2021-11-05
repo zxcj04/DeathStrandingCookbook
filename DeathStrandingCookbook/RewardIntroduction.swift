@@ -29,9 +29,12 @@ struct RewardIntroduction: View {
                 ForEach(searchResults) { location in
                     Section {
                         ForEach(location.rewards) { reward in
-                            NavigationLink {
-
-                            } label: {
+                            HStack {
+                                Image("tier\(reward.claimLevel)")
+                                    .interpolation(.none)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
                                 Text(reward.name)
                             }
                         }
