@@ -9,16 +9,43 @@ import SwiftUI
 
 struct RewardIntroduction: View {
     @State var searchText: String = ""
+    @State var searchExact: Bool = false
 
     var searchResults: [RewardLocation] {
         if searchText.isEmpty {
             return RewardLocation.locations
         } else {
             let searchTextLower = searchText.lowercased()
-            return RewardLocation.locations.filter {
-                $0.name.lowercased().contains(searchTextLower) || $0.rewards.filter {
+
+            if(searchExact)
+            {
+                var ret: [RewardLocation]
+
+                ret = RewardLocation.locations.filter {
                     $0.name.lowercased().contains(searchTextLower)
-                }.count > 0
+                }
+
+                if(ret.count <= 0)
+                {
+                    for newLocation in RewardLocation.locations {
+                        let rewards = newLocation.rewards.filter {
+                            $0.name.lowercased().contains(searchTextLower)
+                        }
+
+                        if(rewards.count > 0) {
+                            ret.append(RewardLocation(name: newLocation.name, rewards: rewards))
+                        }
+                    }
+                }
+
+                return ret
+            }
+            else {
+                return RewardLocation.locations.filter {
+                    $0.name.lowercased().contains(searchTextLower) || $0.rewards.filter {
+                        $0.name.lowercased().contains(searchTextLower)
+                    }.count > 0
+                }
             }
         }
     }
@@ -26,6 +53,8 @@ struct RewardIntroduction: View {
     var body: some View {
         NavigationView {
             List {
+                Toggle("精確搜尋", isOn: $searchExact)
+
                 ForEach(searchResults) { location in
                     Section {
                         ForEach(location.rewards) { reward in

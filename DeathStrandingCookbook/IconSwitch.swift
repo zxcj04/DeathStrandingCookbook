@@ -10,37 +10,42 @@ import SwiftUI
 struct IconSwitch: View {
     var body: some View {
         NavigationView {
-            VStack {
-                Button(action: {
-                    UIApplication.shared.setAlternateIconName(nil)
-                }) {
-                    Image("icon_1")
-                        .resizable()
-                        .scaledToFit()
-                }.padding()
-                Button(action: {
-                    UIApplication.shared.setAlternateIconName("icon_2")
-                }) {
-                    Image("icon_2")
-                        .resizable()
-                        .scaledToFit()
-                }.padding()
-                Button(action: {
-                    UIApplication.shared.setAlternateIconName("icon_3")
-                }) {
-                    Image("icon_3")
-                        .resizable()
-                        .scaledToFit()
-                }.padding()
-                Button(action: {
-                    UIApplication.shared.setAlternateIconName("icon_4")
-                }) {
-                    Image("icon_4")
-                        .resizable()
-                        .scaledToFit()
-                }.padding()
+            ZStack {
+                LinearGradient(colors: [Color.black, Color.white, Color.black], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+
+                VStack {
+                    Button(action: {
+                        UIApplication.shared.setAlternateIconName(nil)
+                    }) {
+                        Image("icon_1")
+                            .resizable()
+                            .scaledToFit()
+                    }.padding()
+                    Button(action: {
+                        UIApplication.shared.setAlternateIconName("icon_2")
+                    }) {
+                        Image("icon_2")
+                            .resizable()
+                            .scaledToFit()
+                    }.padding()
+                    Button(action: {
+                        UIApplication.shared.setAlternateIconName("icon_3")
+                    }) {
+                        Image("icon_3")
+                            .resizable()
+                            .scaledToFit()
+                    }.padding()
+                    Button(action: {
+                        UIApplication.shared.setAlternateIconName("icon_4")
+                    }) {
+                        Image("icon_4")
+                            .resizable()
+                            .scaledToFit()
+                    }.padding()
+                }
+                    .navigationTitle("切換 Icon")
             }
-                .navigationTitle("切換 Icon")
         }
     }
 }

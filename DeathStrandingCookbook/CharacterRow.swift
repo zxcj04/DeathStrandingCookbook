@@ -13,7 +13,7 @@ struct CharacterRow: View {
         HStack() {
             Image(character.image)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
                 .scaleEffect(0.9)
