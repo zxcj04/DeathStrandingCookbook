@@ -11,13 +11,18 @@ struct ContentView: View {
     var body: some View {
         TabView {
             CharacterIntroduction()
-                .tabItem{
+                .tabItem {
                     Label("人物介紹", systemImage: "person.circle")
                 }
 
             RewardIntroduction()
-                .tabItem{
+                .tabItem {
                     Label("獎勵整理", systemImage: "gift.circle.fill")
+                }
+            
+            RoadMap()
+                .tabItem {
+                    Label("公路系統", systemImage: "map.circle.fill")
                 }
 
             IconSwitch()
