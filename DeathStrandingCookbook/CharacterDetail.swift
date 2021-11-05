@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CharacterDetail: View {
     var character: Character
+    @State var hidden: Bool = true
+    @State var moveIn: Double = 300
+
     var body: some View {
         VStack {
             ScrollView {
@@ -31,10 +34,15 @@ struct CharacterDetail: View {
                 Spacer()
 
                 Text(character.introduction)
-//                    .multilineTextAlignment(.center)
                     .padding()
+                    .offset(x: moveIn)
+                    .animation(.easeIn, value: moveIn)
             }
-            Spacer()
+            .opacity(hidden ? 0: 1)
+            .animation(.easeIn, value: hidden)
+        }.onAppear {
+            self.hidden = false
+            self.moveIn = 0
         }
     }
 }
