@@ -78,9 +78,29 @@ struct RoadMap: View {
                 .gesture(scaleGesture())
             
             HStack {
-                Toggle("顯示格線", isOn: $showCoord)
+                Spacer()
                 
-                Toggle("顯示據點名稱", isOn: $showName)
+                Button {
+                    showName.toggle()
+                } label: {
+                    Image(systemName: showName ? "tag.fill": "tag.slash.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .foregroundColor(.green)
+                }
+                
+                Button {
+                    showCoord.toggle()
+                } label: {
+                    Image(systemName: showCoord ? "rectangle.split.2x1.fill": "rectangle.split.2x1.slash.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .foregroundColor(.green)
+                }
+                
+                Spacer()
             }
             .offset(x: 0, y: 300)
             .padding()

@@ -44,7 +44,7 @@ struct IconSwitch: View {
                             .scaledToFit()
                     }.padding()
                 }
-                    .navigationTitle("切換 Icon")
+                .navigationTitle("切換 Icon")
             }
         }
     }
