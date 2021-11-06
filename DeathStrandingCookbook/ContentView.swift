@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection = 3
+
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             CharacterIntroduction()
                 .tabItem {
                     Label("人物介紹", systemImage: "person.circle")
                 }
+                .tag(1)
 
             RewardIntroduction()
                 .tabItem {
                     Label("獎勵整理", systemImage: "gift.circle.fill")
                 }
+                .tag(2)
             
             RoadMap()
                 .tabItem {
                     Label("公路系統", systemImage: "map.circle.fill")
                 }
+                .tag(3)
 
             IconSwitch()
                 .tabItem {
                     Label("切換 Icon", systemImage: "pencil.circle.fill")
                 }
+                .tag(4)
         }
     }
 }

@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct CharacterIntroduction: View {
+    @State var player: AVAudioPlayer?
+
     var body: some View {
         NavigationView {
             List {
@@ -40,7 +43,7 @@ struct CharacterIntroduction: View {
                 Section {
                     ForEach(Character.characters) { character in
                         NavigationLink {
-                            CharacterDetail(character: character)
+                            CharacterDetail(character: character, player: $player)
                         } label: {
                             CharacterRow(character: character)
                         }
