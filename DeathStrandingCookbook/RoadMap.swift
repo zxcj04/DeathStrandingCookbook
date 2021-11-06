@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RoadMap: View {
+    @State var showCoord: Bool = true
+    @State var showName: Bool = true
+
     @State private var steadyStateZoomScale: Double = 2
     @GestureState private var gestureZoomScale: Double = 1
     
@@ -56,10 +59,15 @@ struct RoadMap: View {
     }
 
     var body: some View {
+        let zoomBinding = Binding<CGFloat>(
+            get: { self.zoomScale },
+            set: { self.steadyStateZoomScale = $0 / self.gestureZoomScale }
+        )
+
         ZStack {
             Image("fullmap")
                 .resizable()
-                .overlay(Rectangle().fill(.white).scaleEffect(0.25))
+                .overlay(MapOverlay(showCoord: $showCoord, showName: $showName, outerZoomScale: zoomBinding))
                 .rotationEffect(Angle(degrees: 90))
                 .scaledToFit()
                 .offset(x: dragOffset.width, y: dragOffset.height)
@@ -68,6 +76,14 @@ struct RoadMap: View {
             Color.black.opacity(0.01).ignoresSafeArea()
                 .gesture(dragGesture())
                 .gesture(scaleGesture())
+            
+            HStack {
+                Toggle("顯示格線", isOn: $showCoord)
+                
+                Toggle("顯示據點名稱", isOn: $showName)
+            }
+            .offset(x: 0, y: 300)
+            .padding()
         }
     }
 }
