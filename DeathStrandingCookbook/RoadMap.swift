@@ -65,6 +65,8 @@ struct RoadMap: View {
         )
 
         ZStack {
+            Color.blue.opacity(0.25).ignoresSafeArea()
+
             Image("fullmap")
                 .resizable()
                 .overlay(MapOverlay(showCoord: $showCoord, showName: $showName, outerZoomScale: zoomBinding))
@@ -72,10 +74,6 @@ struct RoadMap: View {
                 .scaledToFit()
                 .offset(x: dragOffset.width, y: dragOffset.height)
                 .scaleEffect(zoomScale)
-            
-            Color.black.opacity(0.01).ignoresSafeArea()
-                .gesture(dragGesture())
-                .gesture(scaleGesture())
             
             HStack {
                 Spacer()
@@ -105,6 +103,8 @@ struct RoadMap: View {
             .offset(x: 0, y: 300)
             .padding()
         }
+        .gesture(dragGesture())
+        .gesture(scaleGesture())
     }
 }
 
