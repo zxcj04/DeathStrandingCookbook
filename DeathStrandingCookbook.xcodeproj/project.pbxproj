@@ -19,12 +19,6 @@
 		03B9A42A2735C62F0035A53D /* RoadMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A4292735C62F0035A53D /* RoadMap.swift */; };
 		03B9A42E2735E36A0035A53D /* MapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A42D2735E36A0035A53D /* MapOverlay.swift */; };
 		03B9A433273614F60035A53D /* Bgm_character_voice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03B9A432273614F60035A53D /* Bgm_character_voice.mp3 */; };
-		03C322882734C13100A0BEBE /* icon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322822734C13000A0BEBE /* icon_2@2x.png */; };
-		03C322892734C13100A0BEBE /* icon_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322832734C13000A0BEBE /* icon_2@3x.png */; };
-		03C3228A2734C13100A0BEBE /* icon_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322842734C13000A0BEBE /* icon_4@3x.png */; };
-		03C3228B2734C13100A0BEBE /* icon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322852734C13100A0BEBE /* icon_3@2x.png */; };
-		03C3228C2734C13100A0BEBE /* icon_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322862734C13100A0BEBE /* icon_3@3x.png */; };
-		03C3228D2734C13100A0BEBE /* icon_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C322872734C13100A0BEBE /* icon_4@2x.png */; };
 		03C322902734C46300A0BEBE /* IconSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C3228F2734C46200A0BEBE /* IconSwitch.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +36,6 @@
 		03B9A4292735C62F0035A53D /* RoadMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMap.swift; sourceTree = "<group>"; };
 		03B9A42D2735E36A0035A53D /* MapOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlay.swift; sourceTree = "<group>"; };
 		03B9A432273614F60035A53D /* Bgm_character_voice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bgm_character_voice.mp3; sourceTree = "<group>"; };
-		03C322822734C13000A0BEBE /* icon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_2@2x.png"; sourceTree = "<group>"; };
-		03C322832734C13000A0BEBE /* icon_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_2@3x.png"; sourceTree = "<group>"; };
-		03C322842734C13000A0BEBE /* icon_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_4@3x.png"; sourceTree = "<group>"; };
-		03C322852734C13100A0BEBE /* icon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_3@2x.png"; sourceTree = "<group>"; };
-		03C322862734C13100A0BEBE /* icon_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_3@3x.png"; sourceTree = "<group>"; };
-		03C322872734C13100A0BEBE /* icon_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_4@2x.png"; sourceTree = "<group>"; };
 		03C3228F2734C46200A0BEBE /* IconSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				03B9A42F2736149D0035A53D /* Bgms */,
-				03C322812734C0B600A0BEBE /* icons */,
 				03698C1E27346ACE00249CBF /* DeathStrandingCookbookApp.swift */,
 				03698C2027346ACE00249CBF /* ContentView.swift */,
 				03B9A4292735C62F0035A53D /* RoadMap.swift */,
@@ -113,19 +100,6 @@
 				03B9A432273614F60035A53D /* Bgm_character_voice.mp3 */,
 			);
 			path = Bgms;
-			sourceTree = "<group>";
-		};
-		03C322812734C0B600A0BEBE /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				03C322822734C13000A0BEBE /* icon_2@2x.png */,
-				03C322832734C13000A0BEBE /* icon_2@3x.png */,
-				03C322852734C13100A0BEBE /* icon_3@2x.png */,
-				03C322862734C13100A0BEBE /* icon_3@3x.png */,
-				03C322872734C13100A0BEBE /* icon_4@2x.png */,
-				03C322842734C13000A0BEBE /* icon_4@3x.png */,
-			);
-			path = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,14 +160,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C3228A2734C13100A0BEBE /* icon_4@3x.png in Resources */,
 				03B9A433273614F60035A53D /* Bgm_character_voice.mp3 in Resources */,
-				03C322882734C13100A0BEBE /* icon_2@2x.png in Resources */,
-				03C322892734C13100A0BEBE /* icon_2@3x.png in Resources */,
-				03C3228B2734C13100A0BEBE /* icon_3@2x.png in Resources */,
-				03C3228C2734C13100A0BEBE /* icon_3@3x.png in Resources */,
 				03698C2627346AD300249CBF /* Preview Assets.xcassets in Resources */,
-				03C3228D2734C13100A0BEBE /* icon_4@2x.png in Resources */,
 				03698C2327346AD300249CBF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeathStrandingCookbook/Preview Content\"";
@@ -373,6 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeathStrandingCookbook/Preview Content\"";

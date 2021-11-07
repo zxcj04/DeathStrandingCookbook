@@ -23,21 +23,21 @@ struct IconSwitch: View {
                             .scaledToFit()
                     }.padding()
                     Button(action: {
-                        UIApplication.shared.setAlternateIconName("icon_2")
+                        UIApplication.shared.setAlternateIconName("AppIcon-2")
                     }) {
                         Image("icon_2")
                             .resizable()
                             .scaledToFit()
                     }.padding()
                     Button(action: {
-                        UIApplication.shared.setAlternateIconName("icon_3")
+                        UIApplication.shared.setAlternateIconName("AppIcon-3")
                     }) {
                         Image("icon_3")
                             .resizable()
                             .scaledToFit()
                     }.padding()
                     Button(action: {
-                        UIApplication.shared.setAlternateIconName("icon_4")
+                        UIApplication.shared.setAlternateIconName("AppIcon-4")
                     }) {
                         Image("icon_4")
                             .resizable()
