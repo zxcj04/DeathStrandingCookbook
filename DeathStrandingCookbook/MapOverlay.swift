@@ -9,26 +9,179 @@ import SwiftUI
 
 struct MapOverlay: View {
     @Binding var showCoord: Bool
+    @Binding var showRoad: Bool
     @Binding var showName: Bool
     @Binding var outerZoomScale: CGFloat
 
     var body: some View {
         let coord = showCoord ? Coord(): nil
+        let road = showRoad ? Road(): nil
 
         ZStack {
             coord
                 .opacity(0.5)
-            
-//            ForEach(0..<20) { i in
-//                MapAnnotaion(name: showName ? "首結市": "", scale: outerZoomScale, knot: i > 10)
-//                    .offset(x: CGFloat(-200 + i * 20), y: CGFloat(-100 + i * 10))
-//            }
-            
-            ForEach(MapLocation.locations) { location in
-                MapAnnotaion(name: showName ? location.name: "", scale: outerZoomScale, knot: location.knot)
-                    .offset(x: location.x, y: -location.y)
+
+            Group {
+                road
+    //                .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+
+                ForEach(MapLocation.locations) { location in
+                    MapAnnotaion(name: showName ? location.name: "", scale: outerZoomScale, knot: location.knot)
+                        .position(x: location.x, y: -location.y)
+                }
             }
+            .offset(x: 187, y: 102)
         }
+    }
+}
+
+struct Road: View {
+    private let r: Double = 2
+    
+    private func lakeToSplit() -> some View {
+        ZStack {
+            Path { path in
+                path.move(to: CGPoint(x: 35, y: -40))
+                path.addLine(to: CGPoint(x: 32, y: -35))
+                path.addLine(to: CGPoint(x: 25, y: -27.5))
+                path.addLine(to: CGPoint(x: 17.5, y: -27.5))
+                path.addLine(to: CGPoint(x: 13, y: -30))
+                path.addLine(to: CGPoint(x: 7.5, y: -24))
+                path.addQuadCurve(to: CGPoint(x: 2, y: -21), control: CGPoint(x: 7, y: -21))
+            }.stroke(.orange, lineWidth: 0.5)
+            
+            Path { path in
+                path.addEllipse(in: CGRect(x: 32 - r/2, y: -35 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: 25 - r/2, y: -27.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: 17.5 - r/2, y: -27.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: 13 - r/2, y: -30 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: 7.5 - r/2, y: -24 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: 2 - r/2, y: -21 - r/2, width: r, height: r))
+            }.fill(.green)
+        }
+    }
+    
+    private func splitToSouth() -> some View {
+        ZStack {
+            Path { path in
+                path.move(to: CGPoint(x: 2, y: -21))
+                path.addQuadCurve(to: CGPoint(x: -2, y: -14), control: CGPoint(x: -1, y: -22))
+                path.addLine(to: CGPoint(x: -2.5, y: -11))
+                path.addLine(to: CGPoint(x: -7.5, y: -6.5))
+                path.addLine(to: CGPoint(x: -12, y: -1))
+                path.addLine(to: CGPoint(x: -12.5, y: 3))
+                path.addLine(to: CGPoint(x: -13, y: 10))
+                path.addQuadCurve(to: CGPoint(x: -18, y: 14), control: CGPoint(x: -19, y: 10))
+                path.addLine(to: CGPoint(x: -18, y: 18))
+                path.addLine(to: CGPoint(x: -15.5, y: 24.5))
+                path.addQuadCurve(to: CGPoint(x: -13.5, y: 27.5), control: CGPoint(x: -10, y: 24))
+                path.addQuadCurve(to: CGPoint(x: -13.5, y: 32), control: CGPoint(x: -15, y: 30))
+                path.addQuadCurve(to: CGPoint(x: -9, y: 34), control: CGPoint(x: -12.5, y: 37))
+                path.addLine(to: CGPoint(x: -6, y: 37))
+                path.addLine(to: CGPoint(x: -2, y: 41))
+                path.addLine(to: CGPoint(x: 2, y: 46))
+            }.stroke(.orange, lineWidth: 0.5)
+            
+            Path { path in
+                path.addEllipse(in: CGRect(x: -2 - r/2, y: -14 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -2.5 - r/2, y: -11 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -7.5 - r/2, y: -6.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -12.5 - r/2, y: 3 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -13 - r/2, y: 10 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -18 - r/2, y: 14 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -18 - r/2, y: 18 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -15.5 - r/2, y: 24.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -13.5 - r/2, y: 32 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -9 - r/2, y: 34 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -6 - r/2, y: 37 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -2 - r/2, y: 41 - r/2, width: r, height: r))
+            }.fill(.green)
+        }
+    }
+    
+    private func splitToWestPart1() -> some View {
+        ZStack {
+            Path { path in
+                path.move(to: CGPoint(x: 2, y: -21))
+                path.addLine(to: CGPoint(x: -7.5, y: -23))
+                path.addLine(to: CGPoint(x: -15, y: -25))
+                path.addLine(to: CGPoint(x: -25, y: -32))
+                path.addLine(to: CGPoint(x: -25, y: -36))
+                path.addQuadCurve(to: CGPoint(x: -28, y: -43), control: CGPoint(x: -24, y: -40))
+                path.addQuadCurve(to: CGPoint(x: -31.5, y: -43), control: CGPoint(x: -30, y: -47))
+                path.addQuadCurve(to: CGPoint(x: -36, y: -45), control: CGPoint(x: -32, y: -41))
+                path.addLine(to: CGPoint(x: -43, y: -49))
+                path.addQuadCurve(to: CGPoint(x: -50, y: -50), control: CGPoint(x: -52, y: -46))
+                path.addQuadCurve(to: CGPoint(x: -54, y: -54), control: CGPoint(x: -49, y: -56))
+                path.addLine(to: CGPoint(x: -61, y: -50))
+                path.addQuadCurve(to: CGPoint(x: -71, y: -47), control: CGPoint(x: -64, y: -41))
+                path.addQuadCurve(to: CGPoint(x: -78, y: -49), control: CGPoint(x: -76, y: -51))
+                path.addQuadCurve(to: CGPoint(x: -83, y: -42), control: CGPoint(x: -78, y: -40))
+                path.addLine(to: CGPoint(x: -89, y: -44))
+            }.stroke(.orange, lineWidth: 0.5)
+
+            Path { path in
+                path.addEllipse(in: CGRect(x: -7.5 - r/2, y: -23 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -15 - r/2, y: -25 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -25 - r/2, y: -32 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -25 - r/2, y: -36 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -28 - r/2, y: -43 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -36 - r/2, y: -45 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -43 - r/2, y: -49 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -54 - r/2, y: -54 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -61 - r/2, y: -50 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -71 - r/2, y: -47 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -78 - r/2, y: -49 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -83 - r/2, y: -42 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -95 - r/2, y: -41 - r/2, width: r, height: r))
+            }.fill(.green)
+        }
+    }
+    
+    private func splitToWestPart2() -> some View {
+        ZStack {
+            Path { path in
+                path.move(to: CGPoint(x: -89, y: -44))
+                path.addLine(to: CGPoint(x: -95, y: -41))
+                path.addLine(to: CGPoint(x: -96, y: -34.5))
+                path.addLine(to: CGPoint(x: -92, y: -31))
+                path.addLine(to: CGPoint(x: -92.5, y: -26.5))
+                path.addLine(to: CGPoint(x: -93, y: -20))
+                path.addLine(to: CGPoint(x: -89, y: -13))
+                path.addLine(to: CGPoint(x: -89, y: -7))
+                path.addQuadCurve(to: CGPoint(x: -88, y: 3), control: CGPoint(x: -93, y: 0))
+                path.addQuadCurve(to: CGPoint(x: -82, y: 1), control: CGPoint(x: -86, y: 1))
+                path.addArc(center: CGPoint(x: -80, y: 2), radius: 1, startAngle: .degrees(180), endAngle: .degrees(270), clockwise: true)
+                path.addArc(center: CGPoint(x: -79.5, y: 0.5), radius: 0.5, startAngle: .degrees(90), endAngle: .degrees(0), clockwise: false)
+                path.addArc(center: CGPoint(x: -78.5, y: 0), radius: 0.5, startAngle: .degrees(180), endAngle: .degrees(0), clockwise: true)
+                path.addArc(center: CGPoint(x: -76.5, y: 0), radius: 1.5, startAngle: .degrees(180), endAngle: .degrees(20), clockwise: false)
+                path.addQuadCurve(to: CGPoint(x: -73.5, y: 4), control: CGPoint(x: -75, y: 4))
+            }.stroke(.orange, lineWidth: 0.5)
+
+            Path { path in
+                path.addEllipse(in: CGRect(x: -95 - r/2, y: -41 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -96 - r/2, y: -34.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -92 - r/2, y: -31 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -92.5 - r/2, y: -26.5 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -93 - r/2, y: -20 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -89 - r/2, y: -13 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -89 - r/2, y: -7 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -88 - r/2, y: 3 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -82 - r/2, y: 1 - r/2, width: r, height: r))
+                path.addEllipse(in: CGRect(x: -73.5 - r/2, y: 4 - r/2, width: r, height: r))
+            }.fill(.green)
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            splitToSouth()
+            
+            splitToWestPart1()
+            splitToWestPart2()
+
+            lakeToSplit()
+        }.opacity(0.8)
     }
 }
 
@@ -105,6 +258,7 @@ struct MapAnnotaion: View {
             
             Text(name)
                 .font(.system(size: 9))
+                .foregroundColor(.white)
                 .offset(y: 15)
                 .scaleEffect(1 / scale)
 //                .animation(.easeInOut, value: scale)
@@ -114,6 +268,8 @@ struct MapAnnotaion: View {
 
 struct Coord: View {
     var body: some View {
+        let r: Double = 3
+
         ZStack {
             Path { path in
                 for i in 0..<21 {
@@ -129,10 +285,9 @@ struct Coord: View {
             
             ForEach(-3..<4) { i in
                 ForEach(-2..<3) { j in
-                    Circle()
-                        .fill(.green)
-                        .frame(width: 3, height: 3)
-                        .offset(x: -1.5 + CGFloat(i * 50 + 1), y: -1.5 + CGFloat(j * 50 + 1))
+                    Path { path in
+                        path.addEllipse(in: CGRect(x: CGFloat(187 + i * 50) - r/2, y: CGFloat(102 + j * 50) - r/2, width: r, height: r))
+                    }.fill(.purple)
                 }
             }
             
@@ -144,10 +299,9 @@ struct Coord: View {
                 path.addLine(to: CGPoint(x: 187, y: 200))
             }.stroke(.red, lineWidth: 0.5)
             
-            Circle()
-                .fill(.red)
-                .frame(width: 3, height: 3)
-                .offset(x: -1.5 + 1, y: -1.5 + 1)
+            Path { path in
+                path.addEllipse(in: CGRect(x: 187 - r/2, y: 102 - r/2, width: r, height: r))
+            }.fill(.red)
         }
     }
 }
@@ -155,9 +309,12 @@ struct Coord: View {
 struct MapOverlay_Previews: PreviewProvider {
     @State static var scale: CGFloat = 1
     @State static var showCoord: Bool = true
+    @State static var showRoad: Bool = true
     @State static var showName: Bool = true
 
     static var previews: some View {
-        MapOverlay(showCoord: $showCoord, showName: $showName, outerZoomScale: $scale)
+//        MapOverlay(showCoord: $showCoord, showRoad: $showRoad, showName: $showName, outerZoomScale: $scale)
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }

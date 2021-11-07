@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RoadMap: View {
-    @State var showCoord: Bool = true
+    @State var showCoord: Bool = false
+    @State var showRoad: Bool = true
     @State var showName: Bool = true
 
-    @State private var steadyStateZoomScale: Double = 2
+    @State private var steadyStateZoomScale: Double = 4
     @GestureState private var gestureZoomScale: Double = 1
     
     @State private var steadyStateDragOffset: CGSize = CGSize.zero
@@ -30,7 +31,7 @@ struct RoadMap: View {
     }
     
     private func dragGesture() -> some Gesture {
-        DragGesture()
+        DragGesture(minimumDistance: 0.05)
             .updating($gestureDragOffset, body: { currentState, gestureState, transaction in
                 gestureState = currentState.translation
             })
@@ -51,14 +52,23 @@ struct RoadMap: View {
                     if steadyStateZoomScale < 2 {
                         steadyStateZoomScale = 2
                     }
-                    else if steadyStateZoomScale > 10 {
-                        steadyStateZoomScale = 10
-                    }
                 }
             }
     }
+    
+    private func doubleTapGesture() -> some Gesture {
+        TapGesture(count: 2)
+            .onEnded({ _ in
+                withAnimation(.easeInOut) {
+                    steadyStateZoomScale = 4
+                    steadyStateDragOffset = CGSize.zero
+                }
+            })
+    }
 
     var body: some View {
+        let frameScale: Double = 14.625
+
         let zoomBinding = Binding<CGFloat>(
             get: { self.zoomScale },
             set: { self.steadyStateZoomScale = $0 / self.gestureZoomScale }
@@ -69,9 +79,9 @@ struct RoadMap: View {
 
             Image("fullmap")
                 .resizable()
-                .overlay(MapOverlay(showCoord: $showCoord, showName: $showName, outerZoomScale: zoomBinding))
+                .overlay(MapOverlay(showCoord: $showCoord, showRoad: $showRoad, showName: $showName, outerZoomScale: zoomBinding))
                 .rotationEffect(Angle(degrees: 90))
-                .scaledToFit()
+                .frame(width: 5486 / frameScale, height: 3000 / frameScale)
                 .offset(x: dragOffset.width, y: dragOffset.height)
                 .scaleEffect(zoomScale)
             
@@ -82,6 +92,16 @@ struct RoadMap: View {
                     showName.toggle()
                 } label: {
                     Image(systemName: showName ? "tag.fill": "tag.slash.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .foregroundColor(.green)
+                }
+                
+                Button {
+                    showRoad.toggle()
+                } label: {
+                    Image(systemName: showRoad ? "eye.fill": "eye.slash.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 32)
@@ -105,11 +125,12 @@ struct RoadMap: View {
         }
         .gesture(dragGesture())
         .gesture(scaleGesture())
+        .gesture(doubleTapGesture())
     }
 }
 
 struct RoadMap_Previews: PreviewProvider {
     static var previews: some View {
-        RoadMap()
+        ContentView()
     }
 }
