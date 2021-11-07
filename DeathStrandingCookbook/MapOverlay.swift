@@ -53,12 +53,12 @@ extension MapLocation {
         
         MapLocation(name: "湖結市", x: 35, y: 45, knot: true),
         MapLocation(name: "湖結市南邊的配送中心", x: -10, y: 1, knot: true),
-        MapLocation(name: "湖結市西邊的焚化爐", x: -48, y: 55, knot: false),
         MapLocation(name: "南結市", x: 2, y: -45, knot: true),
         MapLocation(name: "山結市", x: -72, y: -3, knot: true),
         MapLocation(name: "山結市北邊的中繼站", x: -33, y: 36, knot: true),
         MapLocation(name: "山結市北邊的配送中心", x: -89, y: 46, knot: true),
 
+        MapLocation(name: "湖結市西邊的焚化爐", x: -48, y: 55, knot: false),
         MapLocation(name: "彼得 盎格勒", x: 13, y: 45, knot: false),
         MapLocation(name: "庇護所廢墟", x: 0, y: 40, knot: false),
         MapLocation(name: "匠人", x: -5, y: 27, knot: false),
