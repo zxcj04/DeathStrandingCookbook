@@ -36,6 +36,14 @@ struct ContentView: View {
                 }
                 .tag(4)
         }
+        .onAppear {
+            let barAppearance = UITabBarAppearance()
+            
+            barAppearance.configureWithDefaultBackground()
+            
+            UITabBar.appearance().standardAppearance = barAppearance
+            UITabBar.appearance().scrollEdgeAppearance = barAppearance
+        }
     }
 }
 

@@ -76,52 +76,56 @@ struct RoadMap: View {
 
         ZStack {
             Color.blue.opacity(0.25).ignoresSafeArea()
-
-            Image("fullmap")
-                .resizable()
-                .overlay(MapOverlay(showCoord: $showCoord, showRoad: $showRoad, showName: $showName, outerZoomScale: zoomBinding))
-                .rotationEffect(Angle(degrees: 90))
-                .frame(width: 5486 / frameScale, height: 3000 / frameScale)
-                .offset(x: dragOffset.width, y: dragOffset.height)
-                .scaleEffect(zoomScale)
             
-            HStack {
+            VStack {
+                Spacer()
+
+                Image("fullmap")
+                    .resizable()
+                    .overlay(MapOverlay(showCoord: $showCoord, showRoad: $showRoad, showName: $showName, outerZoomScale: zoomBinding))
+                    .frame(width: 5486 / frameScale, height: 3000 / frameScale)
+                    .offset(x: dragOffset.width, y: dragOffset.height)
+                    .scaleEffect(zoomScale)
+                
                 Spacer()
                 
-                Button {
-                    showName.toggle()
-                } label: {
-                    Image(systemName: showName ? "tag.fill": "tag.slash.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                        .foregroundColor(.green)
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        showName.toggle()
+                    } label: {
+                        Image(systemName: showName ? "tag.fill": "tag.slash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(.green)
+                    }
+                    
+                    Button {
+                        showRoad.toggle()
+                    } label: {
+                        Image(systemName: showRoad ? "eye.fill": "eye.slash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(.green)
+                    }
+                    
+                    Button {
+                        showCoord.toggle()
+                    } label: {
+                        Image(systemName: showCoord ? "rectangle.split.2x1.fill": "rectangle.split.2x1.slash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(.green)
+                    }
+                    
+                    Spacer()
                 }
-                
-                Button {
-                    showRoad.toggle()
-                } label: {
-                    Image(systemName: showRoad ? "eye.fill": "eye.slash.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                        .foregroundColor(.green)
-                }
-                
-                Button {
-                    showCoord.toggle()
-                } label: {
-                    Image(systemName: showCoord ? "rectangle.split.2x1.fill": "rectangle.split.2x1.slash.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                        .foregroundColor(.green)
-                }
-                
-                Spacer()
+                .padding()
             }
-            .offset(x: 0, y: 300)
-            .padding()
         }
         .gesture(dragGesture())
         .gesture(scaleGesture())

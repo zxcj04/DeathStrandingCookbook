@@ -47,7 +47,6 @@ struct CharacterIntroduction: View {
                         } label: {
                             CharacterRow(character: character)
                         }
-
                     }
                 } header: {
                     Text("人物")

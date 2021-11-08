@@ -14,13 +14,14 @@ struct IconSwitch: View {
                 LinearGradient(colors: [Color.black, Color.white, Color.black], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
 
-                VStack {
+                TabView {
                     Button(action: {
                         UIApplication.shared.setAlternateIconName(nil)
                     }) {
                         Image("icon_1")
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 128, height: 128)
                     }.padding()
                     Button(action: {
                         UIApplication.shared.setAlternateIconName("AppIcon-2")
@@ -28,6 +29,7 @@ struct IconSwitch: View {
                         Image("icon_2")
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 128, height: 128)
                     }.padding()
                     Button(action: {
                         UIApplication.shared.setAlternateIconName("AppIcon-3")
@@ -35,6 +37,7 @@ struct IconSwitch: View {
                         Image("icon_3")
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 128, height: 128)
                     }.padding()
                     Button(action: {
                         UIApplication.shared.setAlternateIconName("AppIcon-4")
@@ -42,11 +45,13 @@ struct IconSwitch: View {
                         Image("icon_4")
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 128, height: 128)
                     }.padding()
                 }
                 .navigationTitle("切換 Icon")
+                .tabViewStyle(.page)
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

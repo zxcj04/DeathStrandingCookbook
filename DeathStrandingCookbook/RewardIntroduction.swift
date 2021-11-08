@@ -74,7 +74,7 @@ struct RewardIntroduction: View {
             }
             .searchable(text: $searchText, prompt: "據點名稱或獎勵名稱")
             .navigationTitle(Text("獎勵整理"))
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
