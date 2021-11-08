@@ -29,6 +29,11 @@ struct ContentView: View {
                     Label("公路系統", systemImage: "map.circle.fill")
                 }
                 .tag(3)
+            
+            AssetsView()
+                .tabItem {
+                    Label("媒體展示", systemImage: "photo.circle.fill")
+                }
 
             IconSwitch()
                 .tabItem {
